@@ -16,12 +16,12 @@
     "content_scripts": [
         {
             "matches": [
-                "https://www.instagram.com/*"
+              "*://www.instagram.com/*"
             ],
             "run_at": "document_idle",
             "js": [
-                "scripts/jquery.js",
-                "scripts/main.js"
+              "scripts/content/main.js",
+              "scripts/js/jQuery/jquery.js"
             ],
             "css": [
                 "styles/button.css"
