@@ -1,34 +1,34 @@
 {
-    "manifest_version": 2,
-    "name": "EasyInsta",
-    "version": "0.0.0",
-    "description": "Download Images and Videos on Instagram in an easy way ^_^",
-    "author": "_adv27 - vd.anh2711@gmail.com",
-    "homepage_url":"https://www.facebook.com/profile.php?id=100005064335645",
-    "icons": {
-        "16": "icons/icon16.png",
-        "128": "icons/icon128.png"
-    },
-    "permissions": [
-        "downloads",
-        "background"
-    ],
-    "content_scripts": [
-        {
-            "matches": [
-              "*://www.instagram.com/*"
-            ],
-            "run_at": "document_idle",
-            "js": [
-              "scripts/content/main.js",
-              "scripts/js/jQuery/jquery.js"
-            ],
-            "css": [
-                "styles/button.css"
-            ]
-        }
-    ],
-    "browser_action": {
-        "default_title": "EasyInsta plugin"
+  "manifest_version": 2,
+  "name": "EasyInsta",
+  "version": "0.0.0",
+  "description": "Download Images and Videos on Instagram in an easy way ^_^",
+  "author": "_adv27 - vd.anh2711@gmail.com",
+  "homepage_url": "https://www.facebook.com/profile.php?id=100005064335645",
+  "icons": {
+    "16": "icons/icon16.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "downloads",
+    "background"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.instagram.com/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "scripts/js/jQuery/jquery.js",
+        "scripts/content/main.js"
+      ],
+      "css": [
+        "styles/button.css"
+      ]
     }
+  ],
+  "browser_action": {
+    "default_title": "EasyInsta plugin"
+  }
 }

@@ -3,7 +3,7 @@ $(document).on('change mouseover scroll', function(event) {
 });
 
 function get_vid(target) {
-    var parent = target.parent(); 
+    var parent = target.parent();
     var vid_div = parent.find("._qzesf");
     var vid = vid_div.find("video");
     var vid_href = vid.attr("src");
@@ -12,7 +12,7 @@ function get_vid(target) {
 
 function get_img(target) {
     var parent = target.parent();
-    var img_div = parent.find("._4rbun"); 
+    var img_div = parent.find("._4rbun");
     var img = img_div.find("img");
     var img_href = img.attr("src");
     return img_href;
