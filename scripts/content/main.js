@@ -1,37 +1,69 @@
 jQuery(document).ready(function ($) {
-    $(document).on('change mouseover scroll', function (event) {
-        addButton();
-    }).on('mouseover', '._sxolz', function () {
-        var $btn = $(this).find('.action-button'),
-            href = 'javascript:void(0)';
-        if ($btn.hasClass('easyinsta-image')) {
-            //mouseover on img
-            var $img = $(this).find('img');
-            href = $img.attr('src');
-        } else if ($btn.hasClass('easyinsta-video')) {
-            //mouseover on vid
-            var $vid = $(this).find('video');
-            href = $vid.attr('src');
+    let btn_html = '<a class="action-button" style="display: none;">⤵</a>';
+    $(document).on('mouseover', '._sxolz', function () {         //mouseover img or video
+        //adding btn
+        $(this).find('div:not([class]):not(:has(.action-button)):last')
+            .prepend(btn_html);
+        //
+        let href = 'javascript:void(0)',
+            $btn = $(this).find('.action-button');
+        if ($(this).find('div[class^="_e3il2 "]').length > 0) { //is img
+            href = $(this).find('img').attr('src');
+            $btn.addClass('easyinsta-image');
+            if ($btn.hasClass('easyinsta-video')) {
+                $btn.removeClass('easyinsta-video');
+            }
+        } else { //is video
+            href = $(this).find('video').attr('src');
+            $btn.addClass('easyinsta-video');
+            if ($btn.hasClass('easyinsta-image')) {
+                $btn.removeClass('easyinsta-image');
+            }
         }
         $btn.attr({
             'href': href,
-            'download': ""
+            'download': "",
+            'title': `Download this ${$btn.hasClass('easyinsta-image') ? 'Image' : 'Video'}`
         });
         if ($btn.attr('href') !== "javascript:void(0)") {
             $btn.show();
         }
     }).on('mouseout', '._sxolz', function () {
         $(this).find('.action-button').hide();
+    }).on('mouseover', 'a[class*="coreSprite"]', function (event) {     //mouseover next/back picture btn
+        event.stopPropagation();
+    }).on('mouseover', 'a[class*="videoSprite"]', function (event) {    //mouseover play video btn
+        /**
+         *  _v7u5u _pqxoc videoSpritePlayButton
+         *  _v7u5u _pqxoc _75c7w videoSpritePlayButton
+         */
+        //if visible
+        if ($(this).hasClass('_75c7w')) {
+            event.stopPropagation();
+        }
+    }).on('mouseover', '._r1f36, ._te9am', function () {    //mouseover story
+        //adding btn
+        $(this).find('._jtktu:not(:has(.action-button))')
+            .prepend(btn_html);
+        let href = 'javascript:void(0)',
+            $btn = $(this).find('.action-button:first'),
+            $img = $(this).find("img");
+        if ($img.length > 0) {
+            href = $img.attr('src');
+            $btn.addClass('easyinsta-image');
+        } else {
+            href = $(this).find("source:first").attr('src');        //avc1.4D401E vs avc1.42E01E
+            $btn.addClass('easyinsta-video');
+        }
+        $btn.attr({
+            'href': href,
+            'download': "",
+            'title': `Download this ${$btn.hasClass('easyinsta-image') ? 'Image' : 'Video'}`
+        });
+        if ($btn.attr('href') !== "javascript:void(0)") {
+            $btn.show();
+        }
+    }).on('mouseout', '._r1f36, ._te9am', function () {
+        $(this).find('.action-button:first').hide();
     });
-
-    function addButton() {
-        $('div[class^="_e3il2 "]:not(:has(.easyinsta-image))')
-            .prepend
-            ('<a href="javascript:void(0)" class="action-button easyinsta-image" title="Download this image" style="display: none;">⤵</a>');
-        $('._l6uaz:not(:has(.easyinsta-video))')
-            .append('<div class="easyinsta-video"></div>')
-            .closest('div:not([class])')
-            .append
-            ('<a href="javascript:void(0)" class="action-button easyinsta-video" title="Download this video"  style="display: none">⤵</a>');
-    }
 });
