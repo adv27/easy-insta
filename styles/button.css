@@ -20,7 +20,28 @@
     text-decoration: none;
 }
 
+.action-button2 {
+    position: absolute;
+    padding-top: 10px;
+    width: 40px;
+    height: 20px;
+    z-index: 999;
+    margin-top: 70px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    float: left;
+    font-size: 25px;
+    color: #FFF;
+    text-decoration: none;
+}
+
 action-button:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
+}
+
+action-button2:active {
     transform: translate(0px, 5px);
     -webkit-transform: translate(0px, 5px);
     border-bottom: 1px solid;

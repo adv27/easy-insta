@@ -9,8 +9,23 @@
     "16": "icons/icon16.png",
     "128": "icons/icon128.png"
   },
+  //  "permissions": [
+  //    "tabs",
+  //    "downloads",
+  //    "storage",
+  //    "webRequest"
+  //  ],
   "permissions": [
     "tabs",
+    "webRequest",
+    "<all_urls>",
+    "http://*/*",
+    "https://*/*",
+    "cookies",
+    "webRequestBlocking",
+    "unlimitedStorage",
+    "storage",
+    "management",
     "downloads"
   ],
   "content_scripts": [
@@ -26,8 +41,24 @@
       "css": [
         "styles/button.css"
       ]
+    },
+    {
+      "matches": [
+        "*://www.facebook.com/*"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "scripts/js/jQuery/jquery.js",
+        "scripts/content/facebook/main.js"
+      ],
+      "css": [
+        "styles/button.css"
+      ]
     }
   ],
+  "background": {
+    "page": "background.html"
+  },
   "browser_action": {
     "default_title": "EasyInsta plugin"
   }
