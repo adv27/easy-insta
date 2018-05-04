@@ -36,7 +36,7 @@
       "run_at": "document_idle",
       "js": [
         "scripts/js/jQuery/jquery.js",
-        "scripts/content/main.js"
+        "scripts/content/instagram/main.js"
       ],
       "css": [
         "styles/button.css"

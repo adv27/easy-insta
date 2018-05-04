@@ -47,13 +47,14 @@ jQuery(document).ready(function ($) {
             .prepend(btn_html);
         let href = 'javascript:void(0)',
             $btn = $(this).find('.action-button:first'),
-            $img = $(this).find("img");
-        if ($img.length > 0) {
+            $img = $(this).find("img"),
+            $source = $(this).find("source:first");
+        if ($source.length > 0) {
+            href = $source.attr('src');        //avc1.4D401E vs avc1.42E01E
+            $btn.addClass('easyinsta-video');
+        } else {
             href = $img.attr('src');
             $btn.addClass('easyinsta-image');
-        } else {
-            href = $(this).find("source:first").attr('src');        //avc1.4D401E vs avc1.42E01E
-            $btn.addClass('easyinsta-video');
         }
         $btn.attr({
             'href': href,
