@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5fdf58eb-e3f6-4adc-8284-2f47202e6b64" name="Default" comment="">
       <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/dist_files.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/Easy-Insta.iml" afterPath="$PROJECT_DIR$/.idea/Easy-Insta.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
       <change beforePath="$PROJECT_DIR$/scripts/content/instagram/main.js" afterPath="$PROJECT_DIR$/scripts/content/instagram/main.js" />
@@ -227,12 +225,20 @@
       <workItem from="1519813864019" duration="7556000" />
       <workItem from="1520182924331" duration="1061000" />
       <workItem from="1525006670838" duration="1714000" />
-      <workItem from="1527309733028" duration="2226000" />
+      <workItem from="1527309733028" duration="2335000" />
     </task>
+    <task id="LOCAL-00001" summary="WebStorm IDE config">
+      <created>1527312068847</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1527312068847</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47523000" />
+    <option name="totallyTimeSpent" value="47632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -262,6 +268,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="WebStorm IDE config" />
+    <option name="LAST_COMMIT_MESSAGE" value="WebStorm IDE config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
