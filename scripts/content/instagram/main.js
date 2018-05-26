@@ -1,12 +1,21 @@
 jQuery(document).ready(function ($) {
     let btn_html = '<a class="action-button" style="display: none;">⤵</a>';
+    let $btn = $(btn_html);
+    $btn.click(function (event) {
+        event.preventDefault();
+        chrome.runtime.sendMessage(
+            {
+                action: 'download',
+                source: 'instagram',
+                url: $(this).attr('href')
+            });
+    });
     $(document).on('mouseover', '._sxolz', function () {         //mouseover img or video
         //adding btn
         $(this).find('div:not([class]):not(:has(.action-button)):last')
-            .prepend(btn_html);
+            .prepend($btn);
         //
-        let href = 'javascript:void(0)',
-            $btn = $(this).find('.action-button');
+        let href = 'javascript:void(0)';
         if ($(this).find('div[class^="_e3il2 "]').length > 0) { //is img
             href = $(this).find('img').attr('src');
             $btn.addClass('easyinsta-image');
@@ -44,9 +53,8 @@ jQuery(document).ready(function ($) {
     }).on('mouseover', '._r1f36, ._te9am', function () {    //mouseover story
         //adding btn
         $(this).find('._jtktu:not(:has(.action-button))')
-            .prepend(btn_html);
+            .prepend($btn);
         let href = 'javascript:void(0)',
-            $btn = $(this).find('.action-button:first'),
             $img = $(this).find("img"),
             $source = $(this).find("source:first");
         if ($source.length > 0) {
