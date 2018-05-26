@@ -1,0 +1,9 @@
+{
+  "name": "easy-insta",
+  "ignore": [
+    "*"
+  ],
+  "dependencies": {
+    "jQuery": "3.2.1"
+  }
+}
