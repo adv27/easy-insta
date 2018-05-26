@@ -56,9 +56,6 @@
       ]
     }
   ],
-  "background": {
-    "page": "background.html"
-  },
   "browser_action": {
     "default_title": "EasyInsta plugin"
   }
