@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="dist files" pattern="file[Easy-Insta]:dist//*" />
+</component>

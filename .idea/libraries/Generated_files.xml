@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/dist/scripts/content/facebook/main.js" />
+        <item url="file://$PROJECT_DIR$/dist/scripts/content/facebook/main.min.js" />
+        <item url="file://$PROJECT_DIR$/dist/scripts/content/instagram/main.js" />
+        <item url="file://$PROJECT_DIR$/dist/scripts/content/instagram/main.min.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/dist/scripts/content/facebook/main.js" />
+      <root url="file://$PROJECT_DIR$/dist/scripts/content/facebook/main.min.js" />
+      <root url="file://$PROJECT_DIR$/dist/scripts/content/instagram/main.js" />
+      <root url="file://$PROJECT_DIR$/dist/scripts/content/instagram/main.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
