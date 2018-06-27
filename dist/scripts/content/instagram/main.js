@@ -11,13 +11,13 @@ jQuery(document).ready(function ($) {
             url: $(this).attr('href')
         });
     });
-    $(document).on('mouseover', '._sxolz', function () {
+    $(document).on('mouseover', '._97aPb ', function () {
         //mouseover img or video
         //adding btn
         $(this).find('div:not([class]):not(:has(.action-button)):last').prepend($btn);
         //
         var href = 'javascript:void(0)';
-        if ($(this).find('div[class^="_e3il2 "]').length > 0) {
+        if ($(this).find('div.KL4Bh').length > 0) {
             //is img
             href = $(this).find('img').attr('src');
             $btn.addClass('easyinsta-image');
@@ -31,6 +31,8 @@ jQuery(document).ready(function ($) {
             if ($btn.hasClass('easyinsta-image')) {
                 $btn.removeClass('easyinsta-image');
             }
+            //remove this one to activate mouseover event on play btn
+            $('.QvAa1').remove();
         }
         $btn.attr({
             'href': href,
@@ -40,25 +42,26 @@ jQuery(document).ready(function ($) {
         if ($btn.attr('href') !== "javascript:void(0)") {
             $btn.show();
         }
-    }).on('mouseout', '._sxolz', function () {
+    }).on('mouseout', '._97aPb ', function () {
         $(this).find('.action-button').hide();
     }).on('mouseover', 'a[class*="coreSprite"]', function (event) {
         //mouseover next/back picture btn
         event.stopPropagation();
     }).on('mouseover', 'a[class*="videoSprite"]', function (event) {
+    // }).on('mouseover', '.QvAa1', function (event) {
         //mouseover play video btn
         /**
-         *  _v7u5u _pqxoc videoSpritePlayButton
-         *  _v7u5u _pqxoc _75c7w videoSpritePlayButton
+         *  B2xwy _3G0Ji  videoSpritePlayButton
+         *  B2xwy _3G0Ji PTIMp videoSpritePlayButton
          */
         //if visible
-        if ($(this).hasClass('_75c7w')) {
+        if ($(this).hasClass('PTIMp')) {
             event.stopPropagation();
         }
-    }).on('mouseover', '._r1f36, ._te9am', function () {
+    }).on('mouseover', '.qbCDp', function () {
         //mouseover story
-        //adding btn
-        $(this).find('._jtktu:not(:has(.action-button))').prepend($btn);
+        //adding btn        
+        $(this).prepend($btn);
         var href = 'javascript:void(0)',
             $img = $(this).find("img"),
             $source = $(this).find("source:first");
@@ -77,7 +80,7 @@ jQuery(document).ready(function ($) {
         if ($btn.attr('href') !== "javascript:void(0)") {
             $btn.show();
         }
-    }).on('mouseout', '._r1f36, ._te9am', function () {
+    }).on('mouseout', '.qbCDp', function () {
         $(this).find('.action-button:first').hide();
     });
 });
