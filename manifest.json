@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "EasyInsta",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Download Images and Videos on Instagram in an easy way ^_^",
   "author": "_adv27 - vd.anh2711@gmail.com",
   "homepage_url": "https://www.facebook.com/profile.php?id=100005064335645",
@@ -9,12 +9,6 @@
     "16": "icons/icon16.png",
     "128": "icons/icon128.png"
   },
-  //  "permissions": [
-  //    "tabs",
-  //    "downloads",
-  //    "storage",
-  //    "webRequest"
-  //  ],
   "permissions": [
     "tabs",
     "webRequest",
