@@ -1,0 +1,31 @@
+{
+  "name": "easy-insta",
+  "version": "1.0.0",
+  "description": "Simple Chrome extension for download image and video from Instagram.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --config webpack.config.js --watch --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anhvdSE04605/easy-insta.git"
+  },
+  "author": "anhvd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anhvdSE04605/easy-insta/issues"
+  },
+  "homepage": "https://github.com/anhvdSE04605/easy-insta#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}

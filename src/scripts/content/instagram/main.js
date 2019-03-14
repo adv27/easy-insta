@@ -1,6 +1,9 @@
+import jQuery from 'jquery/dist/jquery.min';
+import '../../../styles/button.css';
+
 jQuery(document).ready(function ($) {
-    let btn_html = '<a class="action-button" style="display: none;">⤵</a>';
-    let $btn = $(btn_html);
+    const btn_html = '<a class="action-button" style="display: none;">⤵</a>';
+    const $btn = $(btn_html);
     $btn.click(function (event) {
         event.preventDefault();
         chrome.runtime.sendMessage(
@@ -10,14 +13,24 @@ jQuery(document).ready(function ($) {
                 url: $(this).attr('href')
             });
     });
-    $(document).on('mouseover', '._sxolz', function () {         //mouseover img or video
-        //adding btn
-        $(this).find('div:not([class]):not(:has(.action-button)):last')
-            .prepend($btn);
-        //
+    $(document).on('mouseover', '._97aPb', function () {         //mouseover img or video
+        console.log('in');
+        // adding btn
+        $(this).not('.action-button').append($btn);
         let href = 'javascript:void(0)';
-        if ($(this).find('div[class^="_e3il2 "]').length > 0) { //is img
+
+        // case that post has many pics or videos => contains <ul> tag
+        const $ul = $(this).find('ul.YlNGR');
+        if ($ul.length > 0) {
+            console.log('abc');
+            // the active image/video <li> not contains class 'plVq-'
+            const $activeli = $ul.find('li._-1_m6:not(:has(.plVq-))');
+            href = $activeli.find('img').attr('src');
+        } else {
             href = $(this).find('img').attr('src');
+        }
+
+        if ($(this).find('.KL4Bh').length > 0) { //is img
             $btn.addClass('easyinsta-image');
             if ($btn.hasClass('easyinsta-video')) {
                 $btn.removeClass('easyinsta-video');
@@ -37,27 +50,33 @@ jQuery(document).ready(function ($) {
         if ($btn.attr('href') !== "javascript:void(0)") {
             $btn.show();
         }
-    }).on('mouseout', '._sxolz', function () {
+    }).on('mouseout', '._97aPb', function () {
+        console.log('out');
         $(this).find('.action-button').hide();
-    }).on('mouseover', 'a[class*="coreSprite"]', function (event) {     //mouseover next/back picture btn
+    });
+
+    $(document).on('mouseover', 'div[class*="coreSprite"]', function (event) {     //mouseover next/back picture btn
         event.stopPropagation();
-    }).on('mouseover', 'a[class*="videoSprite"]', function (event) {    //mouseover play video btn
+    }).on('mouseover', 'span[class*="videoSprite"]', function (event) {    //mouseover play video btn
         /**
-         *  _v7u5u _pqxoc videoSpritePlayButton
-         *  _v7u5u _pqxoc _75c7w videoSpritePlayButton
+         *  B2xwy _3G0Ji  videoSpritePlayButton
+         *  B2xwy _3G0Ji PTIMp videoSpritePlayButton
          */
-        //if visible
-        if ($(this).hasClass('_75c7w')) {
-            event.stopPropagation();
-        }
-    }).on('mouseover', '._r1f36, ._te9am', function () {    //mouseover story
+        // if visible
+        // currently drop
+    });
+
+    $(document).on('mouseover', '.qbCDp', function () {    //mouseover story
+        console.log('mouse over stories');
         //adding btn
-        $(this).find('._jtktu:not(:has(.action-button))')
-            .prepend($btn);
-        let href = 'javascript:void(0)',
-            $img = $(this).find("img"),
-            $source = $(this).find("source:first");
-        if ($source.length > 0) {
+        if ($(this).find('.action-button:first').length === 0) {
+            $(this).append($btn);
+        }
+        let href = 'javascript:void(0)';
+        const $img = $(this).find("img");
+        const $source = $(this).find("source:first");
+
+        if ($source.length > 0 && $img.length > 0) {
             href = $source.attr('src');        //avc1.4D401E vs avc1.42E01E
             $btn.addClass('easyinsta-video');
         } else {
@@ -72,7 +91,7 @@ jQuery(document).ready(function ($) {
         if ($btn.attr('href') !== "javascript:void(0)") {
             $btn.show();
         }
-    }).on('mouseout', '._r1f36, ._te9am', function () {
+    }).on('mouseout', '.qbCDp', function () {
         $(this).find('.action-button:first').hide();
     });
 });

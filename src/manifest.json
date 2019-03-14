@@ -29,11 +29,7 @@
       ],
       "run_at": "document_idle",
       "js": [
-        "scripts/js/jQuery/dist/jquery.min.js",
-        "dist/scripts/content/instagram/main.js"
-      ],
-      "css": [
-        "styles/button.css"
+        "dist/scripts/content/instagram/main.bundle.js"
       ]
     },
     {
